@@ -10,18 +10,19 @@
 void main()
 {
     	setlocale(LC_ALL,"Russian");
-    	printf("Вас приветствует Иван Соболев! Откройте данное окно в полноэкранном режиме !\n");
+    	printf("Вас приветствует Иван Соболев!\n");
     	printf("Наслаждайтесь игрой!\n\n\n");
         printf("Выберите игру \n");
-        printf("1-ЯП пакман \n");
+         printf("1-Угадай число \n");
         printf("2-ВТ змейка \n");
         printf("3-КАЗИНО 777 \n");
         printf("4-Крестики нолики-мультиплеер \n");
-        printf("5-Угадай число \n");
+        printf("5-ЯП пакман \n");
+
         printf("100-Выход \n" );
 
     int n = read_int();
-    if(n==1){
+    if(n==5){
          main_pacman();
     }
     if(n==2){
@@ -33,7 +34,7 @@ void main()
     if(n==4){
         main_kandn();
     }
-    if(n==5){
+    if(n==1){
         main_num_guess();
     }
 
@@ -42,7 +43,8 @@ void main()
                 printf("--Выход!--");
                 _Exit(EXIT_SUCCESS);
     }
-
+    system("cls");
+    main();
 
 }
 

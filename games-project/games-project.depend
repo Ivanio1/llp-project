@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1665756855 source:c:\users\asus\documents\games-project\casino.c
+1667056442 source:c:\users\asus\documents\games-project\casino.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
@@ -8,7 +8,7 @@
 	<stdio.h>
 	<conio.h>
 
-1665922399 source:c:\users\asus\documents\games-project\main.c
+1667056908 source:c:\users\asus\documents\games-project\main.c
 	"snake.h"
 	"casino.h"
 	"pacman.h"
@@ -54,7 +54,7 @@
 	<stdlib.h>
 	<time.h>
 
-1665922625 source:c:\users\asus\documents\games-project\pacman.c
+1667056764 source:c:\users\asus\documents\games-project\pacman.c
 	<stdio.h>
 	<conio.h>
 	<windows.h>

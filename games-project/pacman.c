@@ -178,7 +178,8 @@ void move_figures()
    if(myPacMan.lives==0){
                 Sleep(50);
                 printf("--Игра окончена!Вы потратили все 3 жизни!--");
-                 _Exit(EXIT_SUCCESS);
+                getch();
+                return;
    }
 
    playfield[myPacMan.position.y][myPacMan.position.x] = 'P';

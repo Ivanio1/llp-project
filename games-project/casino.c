@@ -67,7 +67,9 @@ int main_casino()
         if (bet == 0 || bet > player_cash)
         {
             printf("\nУвы, Вы нищий!!!\n");
+            getch();
             break;
+
         }
 
         play(bet);
@@ -78,6 +80,7 @@ int main_casino()
                 // если была нажата клавиша ESC
                 Sleep(50);
                 printf("--Заходи ещё!--");
+                getch();
                 break;
             }
     }
