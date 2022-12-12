@@ -1,7 +1,4 @@
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include "number_guess.h"
 
 void guess(int N)
 {
@@ -11,13 +8,11 @@ void guess(int N)
 
 	num = rand() % N;
 
-	printf("Угадай число от "
-		" 1 до %d\n",
-		N);
+	printf("РЈРіР°РґР°Р№ С‡РёСЃР»Рѕ РѕС‚ 1 РґРѕ %d\n",N);
 	do {
 
 		if (numofguess > 10) {
-			printf("\nТы проиграл! Всего у тебя 10 попыток!\n");
+			printf("\nРўС‹ РїСЂРѕРёРіСЂР°Р»! Р’СЃРµРіРѕ Сѓ С‚РµР±СЏ 10 РїРѕРїС‹С‚РѕРє!\n");
 			break;
 		}
 
@@ -28,8 +23,7 @@ void guess(int N)
 		if (guess > num)
 
 		{
-			printf("Меньше "
-				"\n");
+			printf("РњРµРЅСЊС€Рµ \n");
 			numofguess++;
 		}
 
@@ -37,19 +31,18 @@ void guess(int N)
 		else if (num > guess)
 
 		{
-			printf("Больше"
-				" \n");
+			printf("Р‘РѕР»СЊС€Рµ \n");
 			numofguess++;
 		}
 
 		else
-			printf("Ты угадал"
-				" число за %d "
-				"попыток!\n",
+			printf("РўС‹ СѓРіР°РґР°Р»"
+				" С‡РёСЃР»Рѕ Р·Р° %d "
+				"РїРѕРїС‹С‚РѕРє!\n",
 				numofguess);
 
 	} while (guess != num);
-	system ("pause"); //Чтобы сразу не пропадало окно
+	system ("pause"); //Р§С‚РѕР±С‹ СЃСЂР°Р·Сѓ РЅРµ РїСЂРѕРїР°РґР°Р»Рѕ РѕРєРЅРѕ
 }
 
 

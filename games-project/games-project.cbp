@@ -35,6 +35,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="casino.h" />
+		<Unit filename="helper.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="helper.h" />
 		<Unit filename="krestics_and_noliks.c">
 			<Option compilerVar="CC" />
 		</Unit>

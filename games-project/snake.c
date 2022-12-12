@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <conio.h>
-#include <windows.h>
-#include <time.h>
-#include <stdlib.h>
+#include "snake.h"
 
 int area[80][30]={0};
 int Column[500];
@@ -40,12 +36,12 @@ void main_snake()
         if(kbhit())
         {
             goal=getch();
-            if(goal==224)				// код функциональной клавиши
+            if(goal==224)				// РєРѕРґ С„СѓРЅРєС†РёРѕРЅР°Р»СЊРЅРѕР№ РєР»Р°РІРёС€Рё
             {
                 goal=getch();
                 switch(goal)
                 {
-                    case 72:dy=-1; dx=0;		//Отлов нажатия стрелочек
+                    case 72:dy=-1; dx=0;		//РћС‚Р»РѕРІ РЅР°Р¶Р°С‚РёСЏ СЃС‚СЂРµР»РѕС‡РµРє
                         break;
                     case 80:dy=1; dx=0;
                         break;
@@ -57,10 +53,10 @@ void main_snake()
                 }
             }
             if(goal==27){
-                // если была нажата клавиша ESC
+                // РµСЃР»Рё Р±С‹Р»Р° РЅР°Р¶Р°С‚Р° РєР»Р°РІРёС€Р° ESC
                 Sleep(50);
-                system ("pause"); //Чтобы сразу не пропадало окно
-                printf("--Выход!--");
+                system ("pause"); //Р§С‚РѕР±С‹ СЃСЂР°Р·Сѓ РЅРµ РїСЂРѕРїР°РґР°Р»Рѕ РѕРєРЅРѕ
+                printf("--Р’С‹С…РѕРґ!--");
                 con=1;
                 break;
             }
@@ -80,7 +76,7 @@ void main_snake()
         {
             if((sx==Column[i] && sy==Line[i]))
             {
-                get_cursor(sx,sy);printf("--Ты проиграл!--");
+                get_cursor(sx,sy);printf("--РўС‹ РїСЂРѕРёРіСЂР°Р»!--");
                 getch();
                 con=1;
             }
@@ -99,12 +95,12 @@ void main_snake()
         {
             randomize();
             a++;
-            get_cursor(37,1);printf("Счёт: %d",a);
+            get_cursor(37,1);printf("РЎС‡С‘С‚: %d",a);
         }
 
         get_cursor(k,l);printf("T");
 
-        Sleep(100);     // скорость змейки
+        Sleep(100);     // СЃРєРѕСЂРѕСЃС‚СЊ Р·РјРµР№РєРё
 
 
         for(i=0;i<=a;i++)
@@ -123,7 +119,7 @@ void main_snake()
 }
 
 
-void make_frame(int x1, int y1, int x2, int y2, int t)			//метод для создания поля игры
+void make_frame(int x1, int y1, int x2, int y2, int t)			//РјРµС‚РѕРґ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РїРѕР»СЏ РёРіСЂС‹
 {
     int i;
     for(i=x1; i<=x2;i++)
@@ -141,7 +137,7 @@ void make_frame(int x1, int y1, int x2, int y2, int t)			//метод для создания по
 
 }
 
-void screen()					//метод для создания окна игры
+void screen()					//РјРµС‚РѕРґ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РѕРєРЅР° РёРіСЂС‹
 {
     int x,y;
     for(x=0;x<80;x++)
@@ -151,7 +147,7 @@ void screen()					//метод для создания окна игры
         get_cursor(x+1,y+1);
             if(area[x][y]==1)
             {
-                printf("%c",35);			// коды символов рамочки в зависимости от расположения символа
+                printf("%c",35);			// РєРѕРґС‹ СЃРёРјРІРѕР»РѕРІ СЂР°РјРѕС‡РєРё РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ СЂР°СЃРїРѕР»РѕР¶РµРЅРёСЏ СЃРёРјРІРѕР»Р°
             }
 
             else if(area[x][y]==2)
@@ -163,12 +159,12 @@ void screen()					//метод для создания окна игры
 
         }
     }
-    get_cursor(23,23);printf("Arrows-управление, Esc-выход");
+    get_cursor(23,23);printf("Arrows-СѓРїСЂР°РІР»РµРЅРёРµ, Esc-РІС‹С…РѕРґ");
 
 }
 
 
-randomize()					//генерация точек
+randomize()					//РіРµРЅРµСЂР°С†РёСЏ С‚РѕС‡РµРє
 {
     srand(time(NULL));
     k=4+rand()%65;

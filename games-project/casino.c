@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-#define SHUFFLES 5
+#include "casino.h"
 
 int player_cash;
 unsigned char goal;
@@ -9,13 +6,12 @@ unsigned char goal;
 
 void play(int bet)
 {
-
     char *positions = (char *)malloc(3 * sizeof(char));
     positions[0] = 'X';
     positions[1] = 'O';
     positions[2] = 'X';
 
-    printf("\nКручу верчу...\n");
+    printf("\nРљСЂСѓС‡Сѓ РІРµСЂС‡Сѓ...\n");
 
     srand(time(NULL));
 
@@ -32,18 +28,18 @@ void play(int bet)
     }
 
     int playerGuess;
-    printf("\nГде мячик[?][?][?] - 1, 2 или 3? ");
+    printf("\nР“РґРµ РјСЏС‡РёРє[?][?][?] - 1, 2 РёР»Рё 3? ");
     scanf("%d", &playerGuess);
 
     if (positions[playerGuess - 1] == 'O')
     {
         player_cash += 2 * bet;
-        printf("Ооо да, вы угадали!!! Шарик: [%c] [%c] [%c] Общая сумма = $%d\n", positions[0], positions[1], positions[2], player_cash);
+        printf("РћРѕРѕ РґР°, РІС‹ СѓРіР°РґР°Р»Рё!!! РЁР°СЂРёРє: [%c] [%c] [%c] РћР±С‰Р°СЏ СЃСѓРјРјР° = $%d\n", positions[0], positions[1], positions[2], player_cash);
     }
     else
     {
         player_cash -= bet;
-        printf("Вы проиграли, но это случайность. Стоит поробовать еще раз!!! Шарик: [%c] [%c] [%c] Общая сумма = $%d\n", positions[0], positions[1], positions[2], player_cash);
+        printf("Р’С‹ РїСЂРѕРёРіСЂР°Р»Рё, РЅРѕ СЌС‚Рѕ СЃР»СѓС‡Р°Р№РЅРѕСЃС‚СЊ. РЎС‚РѕРёС‚ РїРѕСЂРѕР±РѕРІР°С‚СЊ РµС‰Рµ СЂР°Р·!!! РЁР°СЂРёРє: [%c] [%c] [%c] РћР±С‰Р°СЏ СЃСѓРјРјР° = $%d\n", positions[0], positions[1], positions[2], player_cash);
     }
     free(positions);
 }
@@ -51,22 +47,21 @@ void play(int bet)
 
 int main_casino()
 {
-
     int bet;
-    printf("\n*** Добро пожаловать в КАЗИНО 777 ***\n");
-    printf("\nКакова общая сумма игры?(В долларах): ");
+    printf("\n*** Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РІ РљРђР—РРќРћ 777 ***\n");
+    printf("\nРљР°РєРѕРІР° РѕР±С‰Р°СЏ СЃСѓРјРјР° РёРіСЂС‹?(Р’ РґРѕР»Р»Р°СЂР°С…): ");
     scanf("%d", &player_cash);
-    printf("\nОбщая сумма = $%d\n", player_cash);
-    printf("\nПри победе ставка удваивается");
-     printf("\nEsc-выход");
+    printf("\nРћР±С‰Р°СЏ СЃСѓРјРјР° = $%d\n", player_cash);
+    printf("\nРџСЂРё РїРѕР±РµРґРµ СЃС‚Р°РІРєР° СѓРґРІР°РёРІР°РµС‚СЃСЏ");
+    printf("\nEsc-РІС‹С…РѕРґ");
     while (player_cash > 0)
     {
-        printf("\nСколько ставите? $");
+        printf("\nРЎРєРѕР»СЊРєРѕ СЃС‚Р°РІРёС‚Рµ? $");
         scanf("%d", &bet);
 
         if (bet == 0 || bet > player_cash)
         {
-            printf("\nУвы, Вы нищий!!!\n");
+            printf("\nРЈРІС‹, Р’С‹ РЅРёС‰РёР№!!!\n");
             getch();
             break;
 
@@ -77,9 +72,9 @@ int main_casino()
 
         goal=getch();
          if(goal==27){
-                // если была нажата клавиша ESC
+                // РµСЃР»Рё Р±С‹Р»Р° РЅР°Р¶Р°С‚Р° РєР»Р°РІРёС€Р° ESC
                 Sleep(50);
-                printf("--Заходи ещё!--");
+                printf("--Р—Р°С…РѕРґРё РµС‰С‘!--");
                 getch();
                 break;
             }

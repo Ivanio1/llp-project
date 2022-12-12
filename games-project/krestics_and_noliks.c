@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <conio.h>
+#include "krestics_and_noliks.h"
 
 char kvadrat[10] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
 
@@ -13,7 +12,7 @@ int main_kandn()
 	board();
 	player = (player % 2) ? 1 : 2;
 
-	printf("\t\t\tИгрок %d, введите число:  ", player);
+	printf("\t\t\tРРіСЂРѕРє %d, РІРІРµРґРёС‚Рµ С‡РёСЃР»Рѕ:  ", player);
 	scanf("%d", &vibor);
 
 	mark = (player == 1) ? 'X' : 'O';
@@ -47,7 +46,7 @@ int main_kandn()
 
 	else
 	{
-	    printf("\t\t\tХитрюга, так нельзя! ");
+	    printf("\t\t\tРҐРёС‚СЂСЋРіР°, С‚Р°Рє РЅРµР»СЊР·СЏ! ");
 
 	    player--;
 	    getch();
@@ -60,10 +59,10 @@ int main_kandn()
     board();
 
     if (i == 1)
-	printf("\t\t\t==>\aИгрок %d выиграл ", --player);
+	printf("\t\t\t==>\aРРіСЂРѕРє %d РІС‹РёРіСЂР°Р» ", --player);
     else
-	printf("\t\t\t==>\aИгра закончена ");
-    system ("pause"); //Чтобы сразу не пропадало окно
+	printf("\t\t\t==>\aРРіСЂР° Р·Р°РєРѕРЅС‡РµРЅР° ");
+    system ("pause"); //Р§С‚РѕР±С‹ СЃСЂР°Р·Сѓ РЅРµ РїСЂРѕРїР°РґР°Р»Рѕ РѕРєРЅРѕ
 
 
     getch();
@@ -114,9 +113,9 @@ void board()
 {
 
     system("cls");
-    printf("\n\n\t\t\t\tКрестики Нолики\n\n");
+    printf("\n\n\t\t\t\tРљСЂРµСЃС‚РёРєРё РќРѕР»РёРєРё\n\n");
 
-    printf("\t\t\tИгрок 1 (X)  -  Игрок 2 (O)\n\n\n");
+    printf("\t\t\tРРіСЂРѕРє 1 (X)  -  РРіСЂРѕРє 2 (O)\n\n\n");
 
 
     printf("\t\t\t\t     |     |     \n");

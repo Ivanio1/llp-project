@@ -3,6 +3,7 @@
 #include "pacman.h"
 #include "krestics_and_noliks.h"
 #include "number_guess.h"
+#include "helper.h"
 #include <locale.h>
 #include <conio.h>
 #include <windows.h>
@@ -10,16 +11,16 @@
 void main()
 {
     	setlocale(LC_ALL,"Russian");
-    	printf("Вас приветствует Иван Соболев!\n");
-    	printf("Наслаждайтесь игрой!\n\n\n");
-        printf("Выберите игру \n");
-         printf("1-Угадай число \n");
-        printf("2-ВТ змейка \n");
-        printf("3-КАЗИНО 777 \n");
-        printf("4-Крестики нолики-мультиплеер \n");
-        printf("5-ЯП пакман \n");
+    	printf("Р’Р°СЃ РїСЂРёРІРµС‚СЃС‚РІСѓРµС‚ РРІР°РЅ РЎРѕР±РѕР»РµРІ!\n");
+    	printf("РќР°СЃР»Р°Р¶РґР°Р№С‚РµСЃСЊ РёРіСЂРѕР№!\n\n\n");
+        printf("Р’С‹Р±РµСЂРёС‚Рµ РёРіСЂСѓ \n");
+        printf("1-РЈРіР°РґР°Р№ С‡РёСЃР»Рѕ \n");
+        printf("2-Р’Рў Р·РјРµР№РєР° \n");
+        printf("3-РљРђР—РРќРћ 777 \n");
+        printf("4-РљСЂРµСЃС‚РёРєРё РЅРѕР»РёРєРё-РјСѓР»СЊС‚РёРїР»РµРµСЂ \n");
+        printf("5-РЇРџ РїР°РєРјР°РЅ \n");
 
-        printf("100-Выход \n" );
+        printf("100-Р’С‹С…РѕРґ \n" );
 
     int n = read_int();
     if(n==5){
@@ -40,7 +41,7 @@ void main()
 
 
      if(n==100){
-                printf("--Выход!--");
+                printf("--Р’С‹С…РѕРґ!--");
                 _Exit(EXIT_SUCCESS);
     }
     system("cls");
@@ -48,9 +49,4 @@ void main()
 
 }
 
-int read_int() {
-    printf("Введите число: \n");
-    int x;
-    scanf("%d", &x);
-    return x;
-}
+

@@ -1,12 +1,4 @@
-#include <stdio.h>
-#include <conio.h>
-#include <windows.h>
-#include <stdbool.h>
-#include <stdlib.h>
-
-#define H 30
-#define W 60
-#define NR_GHOSTS 5
+#include "pacman.h"
 
 struct coord
 {
