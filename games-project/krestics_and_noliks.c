@@ -10,7 +10,7 @@ int main_kandn()
     do
     {
 	board();
-	player = (player % 2) ? 1 : 2;
+	player = (player % 2) ? 1 : 2; //смена хода
 
 	printf("\t\t\tИгрок %d, введите число:  ", player);
 	scanf("%d", &vibor);
@@ -54,8 +54,7 @@ int main_kandn()
 	i = check_win();
 
 	player++;
-    }
-				while (i ==  - 1);
+    }   while (i ==  - 1);
 
     board();
 
