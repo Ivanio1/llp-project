@@ -9,30 +9,21 @@ int k,l;
 void main_snake()
 {
 
-    int sx=40,sy=12;
-    int dy=0,dx=0;
+    int sx=40;			//текущий x
+    int sy=12;			//текущий y
+    int dy=0;			//смещение по y
+    int dx=0;			//смещение по x
     unsigned char goal;
-    int con=0;
-    int a=0;
+    int con=0;			//флаг цикла
+    int a=0;			//счётчик 
 
     randomize();
     make_frame(0,0,79,22,2);
     screen();
-
-
-    get_cursor(2,2);printf("                                 ");
-    get_cursor(2,3);printf("                                 ");
-    get_cursor(2,4);printf("                                 ");
-    get_cursor(2,5);printf("                                 ");
-    get_cursor(2,6);printf("                                 ");
-    get_cursor(2,7);printf("                                 ");
-    get_cursor(2,8);printf("                                 ");
-    get_cursor(2,9);printf("                                 ");
-    get_cursor(2,10);printf("                                ");
-     get_cursor(2,11);printf("                                ");
-      get_cursor(2,12);printf("                                ");
-     do
-    {
+    clear_field;
+   
+    do
+      {
         if(kbhit())
         {
             goal=getch();
@@ -71,12 +62,12 @@ void main_snake()
 
         Column[0]=sx;
         Line[0]=sy;
-        int i;
-        for(i=1;i<=a;i++)
+        for(int i=1;i<=a;i++)
         {
             if((sx==Column[i] && sy==Line[i]))
             {
-                get_cursor(sx,sy);printf("--Ты проиграл!--");
+                get_cursor(sx,sy);
+		printf("--Ты проиграл!--");
                 getch();
                 con=1;
             }
@@ -98,7 +89,8 @@ void main_snake()
             get_cursor(37,1);printf("Счёт: %d",a);
         }
 
-        get_cursor(k,l);printf("T");
+        get_cursor(k,l);
+	printf("T");
 
         Sleep(100);     // скорость змейки
 
@@ -118,11 +110,25 @@ void main_snake()
     } while (con==0);
 }
 
+void clear_field(){
+ //Очистка окна
+    get_cursor(2,2);printf("                                 ");
+    get_cursor(2,3);printf("                                 ");
+    get_cursor(2,4);printf("                                 ");
+    get_cursor(2,5);printf("                                 ");
+    get_cursor(2,6);printf("                                 ");
+    get_cursor(2,7);printf("                                 ");
+    get_cursor(2,8);printf("                                 ");
+    get_cursor(2,9);printf("                                 ");
+    get_cursor(2,10);printf("                                ");
+    get_cursor(2,11);printf("                                ");
+    get_cursor(2,12);printf("                                ");
+		
+}
 
 void make_frame(int x1, int y1, int x2, int y2, int t)			//метод для создания поля игры
 {
-    int i;
-    for(i=x1; i<=x2;i++)
+    for(int i=x1; i<=x2;i++)
     {
         area[i][y1] = t;
         area[i][y2] = t;
@@ -159,7 +165,8 @@ void screen()					//метод для создания окна игры
 
         }
     }
-    get_cursor(23,23);printf("Arrows-управление, Esc-выход");
+    get_cursor(23,23);
+    printf("Arrows-управление, Esc-выход");
 
 }
 
@@ -172,9 +179,8 @@ randomize()					//генерация точек
 }
 
 void get_cursor(short x, short y) {
-	HANDLE ConsoleOutput;
 	COORD Cursor = {x-1, y-1};
-	ConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
+	HANDLE ConsoleOutput = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleCursorPosition(ConsoleOutput, Cursor);
 }
 
