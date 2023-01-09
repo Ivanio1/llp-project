@@ -54,7 +54,8 @@ int main_kandn()
 	i = check_win();
 
 	player++;
-    }while (i ==  - 1);
+    }
+				while (i ==  - 1);
 
     board();
 
