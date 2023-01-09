@@ -24,7 +24,7 @@ struct Ghost {
 };
 
 
-struct Ghost allGhosts[NR_GHOSTS];
+struct Ghost allGhosts[GHOSTS];
 
 struct PacMan myPacMan = {
                            {
@@ -83,13 +83,14 @@ void initialize()
             playfield[i][j] = '.';
       }
    }
-
-   for (int i = 0; i < NR_GHOSTS; i++)
+fill_ghosts();
+}
+void fiil_ghosts(){
+  for (int i = 0; i < GHOSTS; i++)
    {
       allGhosts[i].vx = 0;
       allGhosts[i].vy = 0;
       allGhosts[i].chasing = true;
-
 
       int x,y;
       do
@@ -103,12 +104,10 @@ void initialize()
       playfield[y][x] = 'G';
 
    }
-
-
+  
 }
 
-
-void user_input()
+void user_click()
 {
    if (_kbhit())
    {
@@ -223,11 +222,10 @@ int main_pacman()
 
    while (1)
    {
-      user_input();
+      user_click();
       move_figures();
       show_playfield();
-
-      Sleep( 1000 / 30 );
+      Sleep(30);
       set_cursor_position(0,0);
 
 
