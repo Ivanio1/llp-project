@@ -4,9 +4,9 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-#define H 30
-#define W 60
-#define NR_GHOSTS 5
+#define H 30     //Высота игрового поля
+#define W 60     //Ширина игрового поля
+#define GHOSTS 5 //Количество врагов
 
 
 
