@@ -2,7 +2,7 @@
 
 void guess(int N)
 {
-	int num, guess, numofguess = 0;
+	int num, guess, numofguesses = 0;
 
 	srand(time(NULL));
 
@@ -11,7 +11,7 @@ void guess(int N)
 	printf("Угадай число от 1 до %d\n",N);
 	do {
 
-		if (numofguess > 10) {
+		if (numofguesses > 10) {
 			printf("\nТы проиграл! Всего у тебя 10 попыток!\n");
 			break;
 		}
@@ -24,7 +24,7 @@ void guess(int N)
 
 		{
 			printf("Меньше \n");
-			numofguess++;
+			numofguesses++;
 		}
 
 
@@ -32,14 +32,14 @@ void guess(int N)
 
 		{
 			printf("Больше \n");
-			numofguess++;
+			numofguesses++;
 		}
 
 		else
 			printf("Ты угадал"
 				" число за %d "
 				"попыток!\n",
-				numofguess);
+				numofguesses);
 
 	} while (guess != num);
 	system ("pause"); //Чтобы сразу не пропадало окно
@@ -50,7 +50,6 @@ int main_num_guess()
 {
 	int N = 100;
 	guess(N);
-
 	return 0;
 }
 
