@@ -11,13 +11,12 @@
 
 
 
-
+void user_click();
 void initialize();
-void user_input();
 void move_figures();
 void show_playfield();
 void set_cursor_position(int x, int y);
-
+void fiil_ghosts();
 void hidecursor();
 
 int main_pacman();
