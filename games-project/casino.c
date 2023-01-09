@@ -59,12 +59,16 @@ int main_casino()
         printf("\nСколько ставите? $");
         scanf("%d", &bet);
 
-        if (bet == 0 || bet > player_cash)
+        if (bet == 0)
         {
             printf("\nУвы, Вы нищий!!!\n");
             getch();
             break;
-
+        }
+        if(bet > player_cash){
+            printf("\nУвы, но столько поставить нельзя\n");
+            getch();
+            break;
         }
 
         play(bet);
